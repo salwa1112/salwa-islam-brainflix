@@ -1,0 +1,23 @@
+.video {
+    display: flex;
+    flex-direction: row;
+    align-items: last baseline baseline;
+    width: 100%;
+    padding-top:1rem;
+
+    &__thumbnail {
+        height: 5rem;
+        width: 10rem;
+        border-radius: 0.5rem;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        width: 70%;
+        font-size: 0.875rem;
+    }
+}
