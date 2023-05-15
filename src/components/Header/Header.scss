@@ -1,0 +1,33 @@
+@use '../../styles/variables' as *;
+
+.upload-button {
+    background-color: $Base-Button-Background;
+    color: $Button-Text-Color;
+    height: 2.5rem;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;;
+
+    &__logo {
+        padding-top: 1.5rem;
+        padding-bottom: 0.8rem;
+    }
+
+    &__search {
+        align-items: center;
+        display: flex;
+        width: 100%;
+        padding-bottom: 1rem;
+
+        &-bar {
+            margin-right: 1rem;
+        }
+    }
+}
