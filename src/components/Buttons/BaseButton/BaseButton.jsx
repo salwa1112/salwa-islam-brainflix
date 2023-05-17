@@ -27,6 +27,3 @@ function BaseButton(props) {
 }
 
 export default BaseButton;
-
-
-

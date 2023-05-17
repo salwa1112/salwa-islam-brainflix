@@ -9,9 +9,9 @@ function VideoPlayer(props) {
     const [buttonIcon, setButtonIcon] = useState(PlayButonIcon);
     //const [posterImage, setPosterImage] = useState('https://i.imgur.com/l2Xfgpl.jpg')
     const [isPlaying, setIsPlaying] = useState(false);
-    const {image} = props.video;
+    const {image} = props.video !== null ? props.video : '';
 
-    //Axios call from
+    //Axios call from data file
 
     const mediaPlayer = useRef(null);
 
