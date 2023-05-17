@@ -1,26 +1,28 @@
-@use '../../../styles/_variables.scss' as *;
+@use '../../../styles/variables' as *;
 
 .base-button {
-   display: flex;
-   justify-content: center;
-   border-radius: 0.25rem;
-   text-align: center;
-   border-style: none;
-   align-items: center;
+    display: flex;
+    align-items: center;
+    border-radius: 0.25rem;
+    align-items: center;
+    text-align: center;
+    background-color: $base-button-background-color;
+    color: $base-button-text-color;
+    height: 3rem;
+    width: 100%;
+    
+    &__icon{
+        height: 1.5rem;
+        width: 1.5rem;
+        padding-left: 0.5rem;
+    }
 
-
-   &__button {
-      background-color: transparent;
-      border: none;
-      color: inherit;
-      font-weight: bold;
-      flex-grow: 1;
-      padding-right: 0.5rem;
-   }
-
-   &__icon {
-      height: 1.5rem;
-      width: 1.5rem;
-      padding-left: 0.5rem;
-   }
+    &__button {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        flex-grow: 1;
+        font-weight: bold;
+        padding-right: 2rem;
+    }
 }

@@ -1,29 +1,26 @@
 @use '../../styles/variables' as *;
 
 .search {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   width: 100%;
-   margin-right: 0.1rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    
+    &__icon {
+        position: absolute;
+        left: 1rem;
+    }
 
-
-   &__icon {
-     transform: translateX(1rem);
-     margin: 0 -1rem 0 0;
-   }
-
-   &__input {
-      padding-left: 2.5rem;
-      height: 2rem;
-      border-radius: 0.25rem;
-      border: 0.0625rem solid $search-bar-border-color;
-      background-color: $search-bar-background-color;
-      width: 100%;
-
-      &::placeholder {
-         color: $placeholder-text-color;
-      }
-   }
-
+    &__input {
+        height: inherit;
+        border-radius: 0.25rem;
+        padding-left: 2.5rem;
+        border: 0.0625rem solid $search-bar-border-color;
+        background-color: $search-bar-background-color;
+        width: 100%;
+       
+        &::placeholder {
+            color: black;
+        }
+    }
 }

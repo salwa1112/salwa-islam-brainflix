@@ -1,16 +1,20 @@
 import './Video.scss'
 
-function Video({ videos }) {
-    const { id, title, channel, image } = videos;
+function Video(props) {
+    const { id, title, channel, image } = props.videos;
 
 
+    function handleClick() {
+        //console.log(id);
+        props.handleVideoClick({ id, title, channel, image });
+    }
 
     return (
-        <div id={id} className='video'>
+        <div onClick={handleClick} id={id} className='video'>
             <img className='video__thumbnail' src={image} alt="" />
             <div className='video__info'>
                 <h3 className='video__title'>{title}</h3>
-                <p className='video__channel'>{channel}</p>
+                <h6 className='video__channel'>{channel}</h6>
             </div>
         </div>
     )

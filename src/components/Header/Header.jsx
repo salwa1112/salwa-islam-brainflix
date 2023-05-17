@@ -1,32 +1,22 @@
 import './Header.scss';
-import BrainFlixLogo from '../../assets/logo/BrainFlix-logo.svg';
 import UploadButton from '../Buttons/BaseButton/BaseButton';
 import UploadSvgIcon from '../../assets/icons/upload.svg';
+import BrainFlixLogo from '../../assets/logo/BrainFlix-logo.svg';
+import ProfileImage from '../Images/ProfileImage/ProfileImage';
+import MohanMuruge from '../../assets/images/Mohan-muruge.jpg';
 import SearchBar from '../SearchBar/SearchBar';
-import ProfileImage from '../ProfileImage/ProfileImage';
-import StaticProfileImage from '../../assets/images/Mohan-muruge.jpg';
 
 function Header() {
-
     return (
-        <header className='header'>
-            {/* logo */}
+        <div className='header'>
             <img className='header__logo' src={BrainFlixLogo} alt="" />
-
             <div className='header__search'>
-
-                {/* search bar */}
-                <SearchBar className='header__search-bar' placeHolderText='Search'/>
-
-                {/* profile picture */}
-                <ProfileImage ProfileImage={StaticProfileImage} />
+                <SearchBar className='header__search-bar' placeHolderText='Search' />
+                <ProfileImage className='header__image' ProfileImage={MohanMuruge} />
             </div>
-
-            {/* upload button */}
-            <UploadButton className={'upload-button'} buttonIcon={UploadSvgIcon} buttonText={'Upload'} />
-        </header>
+            <UploadButton className='upload-button' buttonIcon={UploadSvgIcon} buttonText='Upload'/>
+        </div>
     );
 }
-
 
 export default Header;

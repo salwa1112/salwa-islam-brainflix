@@ -5,20 +5,23 @@ import PauseButtonIcon from '../../../assets/icons/pause.svg';
 import VolumeUpIcon from '../../../assets/icons/volume_up.svg';
 import FullScreenIcon from '../../../assets/icons/fullscreen.svg';
 
-function VideoPlayer() {
+function VideoPlayer(props) {
     const [buttonIcon, setButtonIcon] = useState(PlayButonIcon);
-    const [posterImage, setPosterImage] = useState('https://i.imgur.com/l2Xfgpl.jpg')
+    //const [posterImage, setPosterImage] = useState('https://i.imgur.com/l2Xfgpl.jpg')
     const [isPlaying, setIsPlaying] = useState(false);
+    const {image} = props.video;
 
-    const video = useRef(null);
+    //Axios call from
+
+    const mediaPlayer = useRef(null);
 
     function playVideo() {
         if (isPlaying) {
-            video.current.pause();
+            mediaPlayer.current.pause();
             setButtonIcon(PlayButonIcon);
             setIsPlaying(false);
         } else {
-            video.current.play();
+            mediaPlayer.current.play();
             setIsPlaying(true);
             setButtonIcon(PauseButtonIcon);
         }
@@ -27,17 +30,17 @@ function VideoPlayer() {
 
 
     function handleVideoEnded() {
-        console.log('Ended')
+        console.log('Ended');
         setButtonIcon(PlayButonIcon);
         setIsPlaying(false);
-        video.current.load();
+        mediaPlayer.current.load();
     }
 
     return (
         <div className='video-wrapper'>
-            <video poster={posterImage} onEnded={handleVideoEnded} className={"video-player"}
-                ref={video}
-                src={"https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"} />
+            <video poster={image !== undefined ? image : ''} onEnded={handleVideoEnded} className={"video-player"}
+                ref={mediaPlayer}
+                src={props.src} />
 
             <div className={'video-controller'}>
                 <div onClick={playVideo} className='video-controller__play'>

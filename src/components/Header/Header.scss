@@ -1,33 +1,59 @@
 @use '../../styles/variables' as *;
 
-.upload-button {
-    background-color: $Base-Button-Background;
-    color: $Button-Text-Color;
-    height: 2.5rem;
-    width: 100%;
-}
-
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    margin-bottom: 1rem;;
-
+    margin: 0rem 1rem 0 1rem;
+    
     &__logo {
-        padding-top: 1.5rem;
-        padding-bottom: 0.8rem;
+        height: 1.5625rem;
+        width: 7.5rem;
+        margin: 1rem 0 0 0;
     }
 
     &__search {
-        align-items: center;
         display: flex;
+        flex-direction: row;
+        align-items: center;
         width: 100%;
-        padding-bottom: 1rem;
+        margin:1rem;
 
         &-bar {
-            margin-right: 1rem;
+            height: 2.75rem;
         }
+    }
+
+    &__image {
+        margin-left: 1rem;
+        height: 3rem;
+        width: 3rem;
+    }
+}
+
+.upload-button {
+    background-color: $base-button-background-color;
+    color: $base-button-text-color;
+    height: 3rem;
+    width:100%;
+    display: flex;
+    align-items: center;
+    border-radius: 0.25rem;
+    align-items: center;
+    text-align: center;
+  
+    &__icon{
+        height: 1.5rem;
+        width: 1.5rem;
+        padding-left: 0.5rem;
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        color: inherit;
+        flex-grow: 1;
+        font-weight: bold;
+        padding-right: 2rem;
     }
 }
