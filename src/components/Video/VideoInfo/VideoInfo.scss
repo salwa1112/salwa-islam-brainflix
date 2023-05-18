@@ -1,0 +1,88 @@
+@use '../../../styles/variables' as *;
+
+
+.player-video {
+
+    &__channel__date {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    &__subheader {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__title {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        padding-left: 1.2rem;
+
+    }
+
+    &__divider {
+        border: 0.0625rem solid $divider-color;
+        margin: 0 1rem 0rem 1rem;
+    }
+
+    &__channel {
+        padding-top: 1.2rem;
+        padding-bottom: 1.2rem;
+        padding-left: 1.3rem;
+        font-size: 1.2rem;
+    }
+
+    &__date {
+        padding-bottom: 1.2rem;
+        padding-left: 1.2rem;
+        color: $border-color;
+        font-size: 1.3rem;
+    }
+
+    &__icons {
+        padding-right: 6rem;
+
+    }
+
+    &__views {
+       padding-bottom: 0.1rem;
+        padding-left: 1.2rem;
+        color: $border-color;
+        font-size: 1.3rem;
+        padding-top: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &-icon {
+            height: 3rem;
+            width: 3.2rem;
+            padding-right: 1rem;
+        }
+
+    }
+
+    &__like {
+        padding-left: 1.2rem;
+        padding-bottom: 1rem;
+        color: $border-color;
+        font-size: 1.3rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &-icon {
+            @extend .player-video__views-icon;
+            width: 2.8rem;
+        }
+
+    }
+
+    &__description {
+        padding: 1.2rem;
+        font-size: 1.2rem;
+    }
+}

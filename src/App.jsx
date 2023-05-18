@@ -3,6 +3,7 @@ import './styles/brainflix.scss'; //If Global Component Needed
 import BrainFlixHeader from './components/Header/Header';
 import VideoPlayer from './components/Video/VideoPlayer/VideoPlayer';
 import VideoList from './components/Video/VideoList/VideoList';
+import VideoInfo from './components/Video/VideoInfo/VideoInfo';
 import { useState } from 'react';
 
 
@@ -19,7 +20,7 @@ function App() {
       <BrainFlixHeader />
       
       <VideoPlayer video={currentVideo} src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" />
-      
+      <VideoInfo />
       <VideoList handleListClick={onVideoListClicked} />
     </div>
   );
