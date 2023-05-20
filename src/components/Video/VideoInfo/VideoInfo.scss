@@ -1,88 +1,86 @@
 @use '../../../styles/variables' as *;
 
-
 .player-video {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem 1rem 1rem;
+    font-family: 'Avenir', sans-serif;
 
-    &__channel__date {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    &__subheader {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    &__title {
-        padding-top: 1.2rem;
-        padding-bottom: 1.2rem;
-        padding-left: 1.2rem;
-
+    &__title{
+        font-size: 1.625rem;
+        color: $brainflix-black-text;
+        line-height: 1.4em;
+        font-weight: 600;
+        letter-spacing: 0.02em;
     }
 
     &__divider {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         border: 0.0625rem solid $divider-color;
-        margin: 0 1rem 0rem 1rem;
     }
 
-    &__channel {
-        padding-top: 1.2rem;
-        padding-bottom: 1.2rem;
-        padding-left: 1.3rem;
-        font-size: 1.2rem;
-    }
-
-    &__date {
-        padding-bottom: 1.2rem;
-        padding-left: 1.2rem;
-        color: $border-color;
-        font-size: 1.3rem;
-    }
-
-    &__icons {
-        padding-right: 6rem;
-
-    }
-
-    &__views {
-       padding-bottom: 0.1rem;
-        padding-left: 1.2rem;
-        color: $border-color;
-        font-size: 1.3rem;
-        padding-top: 1.2rem;
+    &__subheader{
         display: flex;
         flex-direction: row;
+        justify-content: flex-start;
+        width: 100%;
         align-items: center;
-
-        &-icon {
-            height: 3rem;
-            width: 3.2rem;
-            padding-right: 1rem;
-        }
-
     }
 
-    &__like {
-        padding-left: 1.2rem;
+    &__channel-info{
+        width: 50%;
+        font-size: 0.8125rem;
+        color: $brainflix-black-text;
+    }
+
+    &__date{
+        color: #AFAFAF;
+        font-size: 0.9375rem;
+    }
+
+
+    &__stats{
+        width: 50%;
+    }
+
+    &__views{
+        @extend .player-video__subheader;
         padding-bottom: 1rem;
-        color: $border-color;
-        font-size: 1.3rem;
-        display: flex;
-        flex-direction: row;
         align-items: center;
-
-        &-icon {
-            @extend .player-video__views-icon;
-            width: 2.8rem;
-        }
-
     }
 
-    &__description {
-        padding: 1.2rem;
-        font-size: 1.2rem;
+    &__likes{
+        @extend .player-video__subheader;
     }
+
+    &__channel{
+        padding-bottom: 1rem;
+    }
+
+
+    &__view-icon{
+        padding-right: 1rem;
+        width: 2.75rem;
+    }
+
+    
+    &__like-icon{
+        padding-right: 1rem;
+        width: 2.375rem;
+    }
+
+    &__count{
+        color: #AFAFAF;
+        font-size: 0.9375rem;
+    }
+
+    &__description{
+        font-size: 14px;
+        color: $brainflix-black-text;
+        line-height: 1.4em;
+        letter-spacing: 0.05em;
+    }
+
+
 }

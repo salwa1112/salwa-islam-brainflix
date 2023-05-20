@@ -15,8 +15,8 @@
         height: inherit;
         border-radius: 0.25rem;
         padding-left: 2.5rem;
-        border: 0.0625rem solid $border-color;
-        background-color: $background-color;
+        border: 0.0625rem solid $divider-color;
+        background-color: $search-bar-background-color;
         width: 100%;
        
         &::placeholder {

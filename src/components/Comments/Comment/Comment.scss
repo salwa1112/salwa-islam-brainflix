@@ -1,0 +1,48 @@
+.comment {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+
+
+    &__image {
+        height: 2.5rem;
+        width: 2.5rem;
+        border-radius: 50%;
+        background-color: #e1e1e1;
+        background-blend-mode: multiply;
+    }
+
+
+    &__info-top{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__info{
+        padding-left: 1rem;
+    }
+
+    &__timestamp{
+        font-size: 1rem;
+        color: #afafaf;
+    }
+
+    &__comment{
+        padding-top: 1rem;
+        padding-right: 0.75rem;
+        line-height: 1.45em;
+        color: #323232;
+        font-size: 0.9375rem;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+
+    &__name{
+        font-weight: bold;
+        font-size: 0.9375rem;
+        color: #323232;
+    }
+
+}
+

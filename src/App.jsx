@@ -1,27 +1,30 @@
 import './App.scss';
 import './styles/brainflix.scss'; //If Global Component Needed
 import BrainFlixHeader from './components/Header/Header';
-import VideoPlayer from './components/Video/VideoPlayer/VideoPlayer';
 import VideoList from './components/Video/VideoList/VideoList';
-import VideoInfo from './components/Video/VideoInfo/VideoInfo';
+import MainVideo from './components/MainVideo/MainVideo';
+import videos from '../src/data/videos.json';
+import videoDetails from '../src/data/video-details.json';
 import { useState } from 'react';
 
 
 function App() {
-  const [currentVideo, setCurrentVideo] = useState(null)
+  const [videoList, setVideoList] = useState(videos);
+  const [clickedVideoDetail, setClickedVideoDetail] = useState(videoDetails[0]);
 
-  function onVideoListClicked(video){
-    setCurrentVideo(video);
-    console.log(video);
+  function onVideoListClicked(clickedVideo) {
+    setClickedVideoDetail(videoDetails.filter(v => v.id === clickedVideo.id)[0]);
   }
 
+
+  //To send info to main video, we need click from each video to load the main video
   return (
     <div className="App">
       <BrainFlixHeader />
-      
-      <VideoPlayer video={currentVideo} src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" />
-      <VideoInfo />
-      <VideoList handleListClick={onVideoListClicked} />
+
+      <MainVideo videoDetail={clickedVideoDetail} />
+
+      <VideoList videoList={videoList} handleListClick={onVideoListClicked} />
     </div>
   );
 }

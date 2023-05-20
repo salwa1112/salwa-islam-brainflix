@@ -1,2 +1,12 @@
 @use './variables' as *;
 @use './partials/mixins';
+
+
+@font-face {
+    font-family: 'Avenir', sans-serif;
+    src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('otf');
+    src: url('../assets/fonts/AvenirNextLTPro-Regular.otf') format('otf');
+}
+
+
+
