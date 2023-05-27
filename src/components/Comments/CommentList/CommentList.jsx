@@ -18,12 +18,11 @@ function CommentList(props) {
                     <div className='comment-list__input-wrapper'>
                         <textarea className='comment-list__input' type="text" 
                             placeholder='Add a new comment' />
+                            {/* comment button */}
                         <BaseButton className='comment-list__button' buttonIcon={CommentIcon} buttonText='COMMENT' />
                     </div>
                 </div>
-
             </form>
-
             <hr className='comment-list__divider' />
             {comments.map((comment) => {
                 return (                 
