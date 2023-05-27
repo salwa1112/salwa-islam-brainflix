@@ -14,7 +14,7 @@ function CommentList(props) {
             <form className='comment-list__form' action="">
                 <h3 className='comment-list__form-title'>JOIN THE CONVERSATION</h3>
                 <div className='comment-list__add-comment'>
-                    <img className='comment-list__image' src={MohanMuruge} alt="" />
+                    <img className='comment-list__image' src={MohanMuruge} alt="profile picture" />
                     <div className='comment-list__input-wrapper'>
                         <textarea className='comment-list__input' type="text" 
                             placeholder='Add a new comment' />

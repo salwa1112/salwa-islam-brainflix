@@ -5,6 +5,14 @@
     display: flex;
     position: relative;
     padding-top: 1rem;
+
+    @include tablet {
+        padding-top: 0rem;
+    }
+
+    @include desktop {
+        padding-top: 0rem;
+    }
 }
 
 .video-player {
@@ -16,6 +24,13 @@
         height: 27rem;
         object-fit: cover;
         padding: 0 2.5rem 0 2.5rem;
+        background-color: black;
+    }
+
+    @include desktop {
+        height: 37.5rem;
+        object-fit: cover;
+        padding: 0 15.5rem 0 15.5rem;
         background-color: black;
     }
 }

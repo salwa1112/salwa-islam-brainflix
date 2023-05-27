@@ -8,8 +8,12 @@
     font-family: 'Avenir', sans-serif;
 
     @include tablet {
-        padding: 1rem 2rem 1rem 2rem;
+        padding: 1rem 2.5rem 1rem 2.5rem;
+    }
 
+
+    @include desktop {
+        padding: 2rem 0rem 1rem 9rem;
     }
 
     &__title{
@@ -21,6 +25,10 @@
 
         @include tablet {
             font-size: 2rem;
+        }
+
+        @include desktop {
+            width: 45rem;
         }
     }
 
@@ -58,6 +66,10 @@
             padding-top: 1rem;
             align-items: center;
             justify-content: flex-end;
+        }
+
+        @include desktop {
+            padding-right: 1rem;
         }
     }
 
@@ -165,6 +177,11 @@
         @include tablet {
             font-size: 0.9375rem;
             letter-spacing: 0;
+        }
+
+        @include desktop {
+            padding-right: 1.5rem;
+            letter-spacing: 0.05em;
         }
     }
 

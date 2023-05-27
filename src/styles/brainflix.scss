@@ -1,7 +1,7 @@
 @use './variables' as *;
 @use './partials/mixins';
 
-
+//fonts to use throughout the app
 @font-face {
     font-family: 'Avenir', sans-serif;
     src: url('../assets/fonts/AvenirNextLTPro-Bold.otf') format('otf');

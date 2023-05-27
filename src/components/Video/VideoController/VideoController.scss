@@ -16,6 +16,10 @@
         padding-right: 3rem;
     }
 
+    @include desktop {
+        padding: 0 16.5rem 0 16.5rem;
+    }
+
 
     &__play-icon {
         height: 0.75rem;
@@ -23,6 +27,16 @@
     }
 
     &__volume-icon {
+        height: 1rem;
+        width: 1rem;
+
+        @include tablet {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+    }
+
+    &__zoom-icon {
         height: 1rem;
         width: 1rem;
 

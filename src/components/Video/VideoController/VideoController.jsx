@@ -8,7 +8,7 @@ function VideoController(props) {
     return (
         <div className={'video-controller'}>
             <div className='video-controller__play'>
-                <img className='video-controller__play-icon' src={PlayButonIcon} alt="" />
+                <img className='video-controller__play-icon' src={PlayButonIcon} alt="Play Button for Video" />
             </div>
             <div className='video-controller__seek'>
                 <div className='video-controller__seek-bar' />
@@ -17,8 +17,8 @@ function VideoController(props) {
                 </div>
             </div>
             <div className='video-controller__other-controls'>
-                <img className='video-controller__volume-icon' src={FullScreenIcon} alt="" />
-                <img className='video-controller__volume-icon' src={VolumeUpIcon} alt="" />
+                <img className='video-controller__zoom-icon' src={FullScreenIcon} alt="Icon for FullScreen Video" />
+                <img className='video-controller__volume-icon' src={VolumeUpIcon} alt="Icon for Increase Volume" />
             </div>
         </div>
     );

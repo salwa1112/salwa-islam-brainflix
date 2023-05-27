@@ -1,7 +1,13 @@
+@use '../../../styles/partials/mixins' as *;
+
 .comment {
     display: flex;
     flex-direction: row;
     padding-top: 1rem;
+
+    @include desktop {
+        padding-right: 2rem;
+    }
 
 
     &__image {

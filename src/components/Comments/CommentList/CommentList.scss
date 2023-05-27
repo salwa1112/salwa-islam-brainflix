@@ -10,8 +10,11 @@
     font-family: 'Avenir', sans-serif;
 
     @include tablet {
-        padding-left: 2rem;
-        padding-right: 2rem;
+        padding: 2rem 2.5rem 0 2.5rem;
+    }
+
+    @include desktop {
+        padding: 2rem 0rem 0 9rem;
     }
 
     &__title {
@@ -21,12 +24,23 @@
     &__divider {
         margin-top: 1rem;
         border: 0.0625rem solid #E1E1E1;
+
+
+        @include desktop {
+            &:last-child{
+                display: none;
+            }
+        }
     }
 
     &__form{
         display: flex;
         flex-direction: column;
         width: 100%;
+
+        @include desktop {
+            padding-right: 2rem;
+        }
 
 
         &-title{

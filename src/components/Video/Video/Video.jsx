@@ -5,13 +5,12 @@ function Video(props) {
 
 
     function handleClick() {
-        //console.log(id);
         props.handleVideoClick({ id, title, channel, image });
     }
 
     return (
         <div onClick={handleClick} id={id} className='video'>
-            <img className='video__thumbnail' src={image} alt="" />
+            <img className='video__thumbnail' src={image} alt="Thumbnail" />
             <div className='video__info'>
                 <h3 className='video__title'>{title}</h3>
                 <h6 className='video__channel'>{channel}</h6>

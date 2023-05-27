@@ -9,7 +9,7 @@ function BaseButton(props) {
 
     return (
         <div className={divClassName !== '' ? `base-button ${divClassName}` : 'base-button'}>
-            <img className={iconClassName} src={buttonIcon} alt="" />
+            <img className={iconClassName} src={buttonIcon} alt="base button icon" />
             <button type={'button'} className={btnClassName} >
                 {buttonText.toUpperCase()}
             </button>

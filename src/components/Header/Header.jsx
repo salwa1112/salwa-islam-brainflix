@@ -9,7 +9,7 @@ import SearchBar from '../SearchBar/SearchBar';
 function Header() {
     return (
         <div className='header'>
-            <img className='header__logo' src={BrainFlixLogo} alt="" />
+            <img className='header__logo' src={BrainFlixLogo} alt="Site Logo" />
 
             <div className='header__options'>
                 <div className='header__search'>
