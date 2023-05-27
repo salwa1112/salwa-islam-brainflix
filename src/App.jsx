@@ -1,5 +1,5 @@
 import './App.scss';
-import './styles/brainflix.scss'; //If Global Component Needed
+import './styles/brainflix.scss';
 import BrainFlixHeader from './components/Header/Header';
 import VideoList from './components/Video/VideoList/VideoList';
 import MainVideo from './components/MainVideo/MainVideo';

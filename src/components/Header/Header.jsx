@@ -10,11 +10,16 @@ function Header() {
     return (
         <div className='header'>
             <img className='header__logo' src={BrainFlixLogo} alt="" />
-            <div className='header__search'>
-                <SearchBar className='header__search-bar' placeHolderText='Search' />
-                <ProfileImage className='header__image' ProfileImage={MohanMuruge} />
+
+            <div className='header__options'>
+                <div className='header__search'>
+                    <SearchBar className='header__search-bar' placeHolderText='Search' />
+                    <ProfileImage className='header__image-mobile' ProfileImage={MohanMuruge} />
+                </div>
+                <UploadButton className='upload-button' buttonIcon={UploadSvgIcon} buttonText='Upload' />
+                <ProfileImage className='header__image-options' ProfileImage={MohanMuruge} />
             </div>
-            <UploadButton className='upload-button' buttonIcon={UploadSvgIcon} buttonText='Upload'/>
+
         </div>
     );
 }

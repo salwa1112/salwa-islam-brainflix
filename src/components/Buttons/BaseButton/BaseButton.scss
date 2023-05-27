@@ -6,16 +6,12 @@
     border-radius: 0.25rem;
     align-items: center;
     text-align: center;
-    background-color: $base-button-background-color;
-    color: $base-button-text-color;
-    height: 3rem;
-    width: 100%;
-    font-family: 'Avenir', sans-serif;
     
     &__icon{
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 2rem;
+        width: 2rem;
         padding-left: 0.5rem;
+        margin: 0;
     }
 
     &__button {
@@ -25,5 +21,6 @@
         flex-grow: 1;
         font-weight: bold;
         padding-right: 2rem;
+        justify-content: center;
     }
 }

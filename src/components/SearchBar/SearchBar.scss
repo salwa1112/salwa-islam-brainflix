@@ -3,9 +3,10 @@
 .search {
     display: flex;
     align-items: center;
+    height: 3rem;
     width: 100%;
     position: relative;
-    
+
     &__icon {
         position: absolute;
         left: 1rem;

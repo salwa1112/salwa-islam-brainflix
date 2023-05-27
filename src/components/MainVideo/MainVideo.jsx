@@ -1,6 +1,6 @@
 import './MainVideo.scss';
 import CommentList from '../Comments/CommentList/CommentList';
-import VideoInfo from '../Video/VideoInfo/VideoInfo';
+import VideoInfo from '../Video/MainVideoInfo/MainVideoInfo';
 import VideoPlayer from '../Video/VideoPlayer/VideoPlayer';
 
 function MainVideo(props) {
