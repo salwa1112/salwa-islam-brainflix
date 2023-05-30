@@ -14,7 +14,7 @@ function MainVideoInfo(props) {
             <div className='player-video__subheader'>
                 <div className='player-video__channel-info'>
                     <h3 className='player-video__channel'>By {channel}</h3>
-                    <p className='player-video__date'>{moment(timestamp).format('DD/MM/yyyy')}</p>
+                    <p className='player-video__date'>{moment(timestamp).fromNow()}</p>
                 </div>
                 <div className='player-video__stats'>
                     <div className='player-video__views'>

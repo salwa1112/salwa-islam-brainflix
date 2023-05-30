@@ -1,6 +1,6 @@
 import './Comment.scss'
 import defaultIcon from '../../../assets/icons/scrub.svg';
-import moment from 'moment/moment';
+import moment from 'moment';
 
 function Comment(props) {
     const { id, name, timestamp, comment, image } = props.comment;
