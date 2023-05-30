@@ -17,7 +17,7 @@ function Comment(props) {
                 <div className='comment__info'>
                     <div className='comment__info-top'>
                         <h4 className='comment__name'>{name}</h4>
-                        <p className='comment__timestamp'>{moment(timestamp).format('DD/MM/yyyy')}</p>
+                        <p className='comment__timestamp'>{moment(timestamp).fromNow()}</p>
                     </div>
                     <p className='comment__comment'>{comment}</p>
                 </div>
