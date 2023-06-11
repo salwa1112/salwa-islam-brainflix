@@ -1,7 +1,7 @@
 import './MainVideoInfo.scss'
 import ViewsIcon from '../../../assets/icons/views.svg';
 import LikeIcon from '../../../assets/icons/likes.svg';
-import moment from 'moment';
+import { DateTimeUtils } from '../../../utils';
 
 function MainVideoInfo(props) {
     const { title, channel, timestamp, views, likes, description } = props.videoinfo;
@@ -14,7 +14,7 @@ function MainVideoInfo(props) {
             <div className='player-video__subheader'>
                 <div className='player-video__channel-info'>
                     <h3 className='player-video__channel'>By {channel}</h3>
-                    <p className='player-video__date'>{moment(timestamp).fromNow()}</p>
+                    <p className='player-video__date'>{DateTimeUtils.getShortDateFromTimestamp(timestamp)}</p>
                 </div>
                 <div className='player-video__stats'>
                     <div className='player-video__views'>

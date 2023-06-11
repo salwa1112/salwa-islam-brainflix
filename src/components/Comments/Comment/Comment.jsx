@@ -1,6 +1,6 @@
 import './Comment.scss'
 import defaultIcon from '../../../assets/icons/scrub.svg';
-import moment from 'moment';
+import { DateTimeUtils } from '../../../utils';
 
 function Comment(props) {
     const { id, name, timestamp, comment, image } = props.comment;
@@ -17,7 +17,7 @@ function Comment(props) {
                 <div className='comment__info'>
                     <div className='comment__info-top'>
                         <h4 className='comment__name'>{name}</h4>
-                        <p className='comment__timestamp'>{moment(timestamp).fromNow()}</p>
+                        <p className='comment__timestamp'>{DateTimeUtils.getShortDateFromTimestamp(timestamp)}</p>
                     </div>
                     <p className='comment__comment'>{comment}</p>
                 </div>

@@ -1,4 +1,3 @@
-import './App.scss';
 import './styles/brainflix.scss';
 import BrainFlixHeader from './components/Header/Header';
 import MainVideo from './components/MainVideo/MainVideo';
