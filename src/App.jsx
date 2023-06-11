@@ -1,21 +1,43 @@
 import './styles/brainflix.scss';
-import BrainFlixHeader from './components/Header/Header';
-import MainVideo from './components/MainVideo/MainVideo';
+import BrainFlixHeader from './components/PageHeader/PageHeader';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage/HomePage';
+import VideoDetailsPage from './pages/VideoDetailsPage/VideoDetailsPage';
+import { useEffect, useState } from 'react';
+import { ApiUtils } from './utils';
 
 
 
 function App() {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    //call video list from api
+    ApiUtils.getVideos().then((r) => {
+      setVideos(r.data);
+      console.log(r.data);
+    })
+    .catch((error)=>{
+      console.log(error);
+    });
+
+  }, []);
 
   //To send info to main video, it needs to be clicked on each video to load the main video
   return (
-    <div className="App">
-      {/* site header component */}
-      <BrainFlixHeader />
-      
-      {/* main video component */}
-      <MainVideo />
+    <BrowserRouter>
+      <div className="App">
+        {/* site header component */}
+        <BrainFlixHeader />
 
-    </div>
+        <Routes>
+          <Route path='/' element={<HomePage videos={videos} />} />
+          <Route path='/videos/:id' element={<VideoDetailsPage />} />
+        </Routes>
+
+
+      </div>
+    </BrowserRouter>
   );
 }
 

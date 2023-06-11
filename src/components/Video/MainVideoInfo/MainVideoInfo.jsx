@@ -3,8 +3,9 @@ import ViewsIcon from '../../../assets/icons/views.svg';
 import LikeIcon from '../../../assets/icons/likes.svg';
 import { DateTimeUtils } from '../../../utils';
 
-function MainVideoInfo(props) {
-    const { title, channel, timestamp, views, likes, description } = props.videoinfo;
+function MainVideoInfo({ videoInfo }) {
+
+    const { title, channel, timestamp, views, likes, description } = videoInfo;
 
     return (
         <div className='player-video'> {/*Block of JSX*/}

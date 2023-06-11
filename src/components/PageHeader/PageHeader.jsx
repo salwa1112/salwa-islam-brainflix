@@ -1,4 +1,4 @@
-import './Header.scss';
+import './PageHeader.scss';
 import UploadButton from '../Buttons/BaseButton/BaseButton';
 import UploadSvgIcon from '../../assets/icons/upload.svg';
 import BrainFlixLogo from '../../assets/logo/BrainFlix-logo.svg';
