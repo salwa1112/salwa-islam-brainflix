@@ -1,4 +1,4 @@
-import './HomePage.scss'
+import './HomePage.scss';
 import VideoPlayer from "../../components/Video/VideoPlayer/VideoPlayer";
 import MainVideoInfo from "../../components/Video/MainVideoInfo/MainVideoInfo";
 import VideoList from "../../components/Video/VideoList/VideoList";
@@ -10,10 +10,12 @@ import { ApiUtils } from "../../utils";
 
 function HomePage({ videos }) {
     const [videoInfo, setVideoInfo] = useState(null);
+    const [videoId, setVideoId] = useState(null);
 
     useEffect(() => {
         //call video info for video id
         const videoId = videos.length > 0 ? videos[0].id : null;
+        setVideoId(videoId);
 
         if (videoId) {
             ApiUtils.getVideoDetails(videoId).then((r) => {
@@ -21,14 +23,14 @@ function HomePage({ videos }) {
             })
                 .catch((error) => {
                     console.log(error);
-                })
+                });
         }
     }, [videos]);
 
     return (
-        <div className="home-page">
+        <>
             {/* VideoPlayer */}
-            <VideoPlayer src="" />
+            <VideoPlayer image={!videoInfo ? '' : videoInfo.image} src={!videoInfo ? '' : videoInfo.video} />
 
             {/* MainVideo */}
             <div className='main-video'>
@@ -40,10 +42,10 @@ function HomePage({ videos }) {
                 <hr className='main-video__divider' />
 
                 {/* VideoList */}
-                <VideoList className={'main-video__video-list'} videos={videos} />
+                <VideoList className={'main-video__video-list'} videos={videos.filter(v => v.id !== videoId)} />
             </div>
 
-        </div>
+        </>
     )
 }
 

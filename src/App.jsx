@@ -3,6 +3,7 @@ import BrainFlixHeader from './components/PageHeader/PageHeader';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
 import VideoDetailsPage from './pages/VideoDetailsPage/VideoDetailsPage';
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 import { useEffect, useState } from 'react';
 import { ApiUtils } from './utils';
 
@@ -32,7 +33,8 @@ function App() {
 
         <Routes>
           <Route path='/' element={<HomePage videos={videos} />} />
-          <Route path='/videos/:id' element={<VideoDetailsPage />} />
+          <Route path='/videos/:id' element={<VideoDetailsPage videos={videos} />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Routes>
 
 

@@ -5,11 +5,15 @@ import BrainFlixLogo from '../../assets/logo/BrainFlix-logo.svg';
 import ProfileImage from '../Images/ProfileImage/ProfileImage';
 import MohanMuruge from '../../assets/images/Mohan-muruge.jpg';
 import SearchBar from '../SearchBar/SearchBar';
+import { Link } from 'react-router-dom';
 
-function Header() {
+function PageHeader() {
+
     return (
         <div className='header'>
-            <img className='header__logo' src={BrainFlixLogo} alt="Site Logo" />
+            <Link to='/'>
+                <img className='header__logo' src={BrainFlixLogo} alt="Site Logo" />
+            </Link>
 
             <div className='header__options'>
                 <div className='header__search'>
@@ -24,4 +28,4 @@ function Header() {
     );
 }
 
-export default Header;
+export default PageHeader;
