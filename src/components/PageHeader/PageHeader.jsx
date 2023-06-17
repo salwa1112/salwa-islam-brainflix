@@ -20,7 +20,9 @@ function PageHeader() {
                     <SearchBar className='header__search-bar' placeHolderText='Search' />
                     <ProfileImage className='header__image-mobile' ProfileImage={MohanMuruge} />
                 </div>
+                <Link to='/video/upload' className='header__link'>
                 <UploadButton className='upload-button' buttonIcon={UploadSvgIcon} buttonText='Upload' />
+                </Link>
                 <ProfileImage className='header__image-options' ProfileImage={MohanMuruge} />
             </div>
 
