@@ -19,22 +19,25 @@
     }
 
 
-    &__info-top{
+    &__info-top {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
     }
 
-    &__info{
+    &__info {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
         padding-left: 1rem;
     }
 
-    &__timestamp{
+    &__timestamp {
         font-size: 1rem;
         color: #afafaf;
     }
 
-    &__comment{
+    &__comment {
         padding-top: 1rem;
         padding-right: 0.75rem;
         line-height: 1.45em;
@@ -44,11 +47,26 @@
         text-align: left;
     }
 
-    &__name{
+    &__name {
         font-weight: bold;
         font-size: 0.9375rem;
         color: #323232;
     }
 
-}
+    &__delete {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-end;
 
+        &-icon {
+          height: 1.5rem;
+
+          @include desktop {
+            padding-right: 2rem;
+          }
+        }
+
+    }
+
+}

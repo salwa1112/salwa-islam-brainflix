@@ -1,0 +1,27 @@
+@use '../../styles/partials/mixins' as *;
+
+.main-video {
+    display: flex;
+    flex-direction: column;
+
+    @include desktop {
+        flex-direction: row;
+    }
+
+    &__divider {
+        display: none;
+        border: 0.0625rem solid #E1E1E1;
+
+
+        @include desktop {
+            display: flex;
+        }
+    }
+
+    &__social {
+        @include desktop {
+            width: 70%;
+        }
+    }
+
+}

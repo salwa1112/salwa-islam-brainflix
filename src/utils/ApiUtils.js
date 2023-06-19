@@ -19,10 +19,19 @@ export const getVideos = ()=> {
 export const getVideoDetails = (videoId)=> {
     return axiosInstance.get('/videos/' + videoId)
 }
+export const postComment = (videoId, payload)=> {
+    return axiosInstance.post('/videos/' + videoId + '/comments', payload)
+}
+
+export const deleteComment = (videoId, commentId)=> {
+    return axiosInstance.delete('/videos/' + videoId + '/comments/' + commentId)
+}
 
 const ApiUtils = {
     getVideos,
-    getVideoDetails
+    getVideoDetails,
+    postComment,
+    deleteComment
 }
 
 

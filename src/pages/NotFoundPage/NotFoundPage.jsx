@@ -1,9 +1,11 @@
+import './NotFoundPage.scss';
+import PageNotFoundSVG from '../../assets/images/not-found.png';
 
 function NotFoundPage() {
 
     return (
         <div>
-            <h1>404 Page Not Found</h1>
+            <img className='page-not-found__image' src={PageNotFoundSVG} alt="Page Not Found 404" />
         </div>
     )
 }

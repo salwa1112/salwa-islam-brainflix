@@ -1,9 +1,15 @@
-import './Comment.scss'
+import './Comment.scss';
+import DeleteSVG from '../../../assets/images/delete-alt.png';
 import defaultIcon from '../../../assets/icons/scrub.svg';
 import { DateTimeUtils } from '../../../utils';
 
-function Comment(props) {
-    const { id, name, timestamp, comment, image } = props.comment;
+function Comment({ commentData, handleDeleteClick }) {
+    const { id, name, timestamp, comment, likes, image } = commentData;
+
+    const handleClick = () => {
+        if (!handleDeleteClick) return;
+        handleDeleteClick(id);
+    }
 
     return (
         <>
@@ -21,6 +27,10 @@ function Comment(props) {
                     </div>
                     <p className='comment__comment'>{comment}</p>
                 </div>
+            </div>
+            <div class="comment__delete">
+                <img class="comment__delete-icon" src={DeleteSVG} onClick={handleClick}
+                    alt="click to delete this comment" />
             </div>
             <hr className='comment-list__divider' />
         </>

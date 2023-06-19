@@ -5,9 +5,14 @@ import BrainFlixLogo from '../../assets/logo/BrainFlix-logo.svg';
 import ProfileImage from '../Images/ProfileImage/ProfileImage';
 import MohanMuruge from '../../assets/images/Mohan-muruge.jpg';
 import SearchBar from '../SearchBar/SearchBar';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function PageHeader() {
+    const navigate = useNavigate();
+
+    const gotoVideoUploadPage = () => {
+        navigate('/video/upload');
+    }
 
     return (
         <div className='header'>
@@ -17,13 +22,18 @@ function PageHeader() {
 
             <div className='header__options'>
                 <div className='header__search'>
-                    <SearchBar className='header__search-bar' placeHolderText='Search' />
-                    <ProfileImage className='header__image-mobile' ProfileImage={MohanMuruge} />
+                    <SearchBar className='header__search-bar'
+                        placeHolderText='Search' />
+                    <ProfileImage className='header__image-mobile'
+                        ProfileImage={MohanMuruge} />
                 </div>
-                <Link to='/video/upload' className='header__link'>
-                <UploadButton className='upload-button' buttonIcon={UploadSvgIcon} buttonText='Upload' />
-                </Link>
-                <ProfileImage className='header__image-options' ProfileImage={MohanMuruge} />
+
+                <UploadButton className='upload-button'
+                    buttonIcon={UploadSvgIcon} buttonText='Upload'
+                    handleClick={gotoVideoUploadPage} />
+
+                <ProfileImage className='header__image-options'
+                    ProfileImage={MohanMuruge} />
             </div>
 
         </div>
