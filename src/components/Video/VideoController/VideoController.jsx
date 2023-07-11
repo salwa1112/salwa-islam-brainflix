@@ -1,6 +1,5 @@
 import './VideoController.scss'
 import PlayButonIcon from '../../../assets/icons/play.svg';
-// import PauseButtonIcon from '../../../assets/icons/pause.svg';
 import VolumeUpIcon from '../../../assets/icons/volume_up.svg';
 import FullScreenIcon from '../../../assets/icons/fullscreen.svg';
 
