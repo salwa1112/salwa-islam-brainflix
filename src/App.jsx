@@ -25,6 +25,7 @@ function App() {
 
   }, []);
 
+  //add the new uploaded video to the list
   const addVideoToTheList = ({id, title, channel, image})=> {
     const newVideoList = [...videos, {id, title, channel, image}];
     console.log(newVideoList);

@@ -37,7 +37,8 @@ function VideoUploadPage({onVideoUpload}) {
             return;
         }
 
-
+        //new uploaded video object
+        //decided to add channel, duration from client side as it's suppose to come from user input
         const video = {
             title: form.title.value,
             channel: 'Brainstation',
@@ -47,12 +48,11 @@ function VideoUploadPage({onVideoUpload}) {
             video: "http://localhost:5000/videos/Sample-Video.mp4"
         };
 
-
+        //upload new video
         ApiUtils.postVideo(JSON.stringify(video))
             .then((response) => {
                 form.reset();
                 const uploadedVideo = response.data;
-                //console.log(uploadedVideo);
                 onVideoUpload(uploadedVideo);
                 gotoHomePage();
             })

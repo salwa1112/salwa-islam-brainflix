@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//not using the api key here but I just kept it so that I can try to use it later
 const apiKey = 'bb34e143-3fee-4d1b-8132-285f565b95ee';
 
 const axiosInstance = axios.create({

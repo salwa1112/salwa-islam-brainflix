@@ -38,6 +38,7 @@ function HomePage({ videos }) {
                 setCommentsData(newCommentsData);
             }).catch((error) => {
                 //Show error to the user
+                console.log(error);
             });
     }
 

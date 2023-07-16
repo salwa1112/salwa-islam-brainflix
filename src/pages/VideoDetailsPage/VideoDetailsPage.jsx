@@ -32,6 +32,7 @@ function VideoDetailsPage({ videos }) {
                 setCommentsData(newCommentsData);
             }).catch((error) => {
                 //Show error to the user
+                console.log(error);
             });
     }
 
@@ -42,6 +43,7 @@ function VideoDetailsPage({ videos }) {
             setCommentsData(updatedComments);
         }).catch((error) => {
             //Show error to the user
+            console.log(error);
         })
     }
 
