@@ -3,7 +3,7 @@ import axios from "axios";
 const apiKey = 'bb34e143-3fee-4d1b-8132-285f565b95ee';
 
 const axiosInstance = axios.create({
-    baseURL: "https://project-2-api.herokuapp.com",
+    baseURL: "http://localhost:5000",
     headers: {
         "Content-Type": "application/json"
     },
@@ -27,11 +27,21 @@ export const deleteComment = (videoId, commentId)=> {
     return axiosInstance.delete('/videos/' + videoId + '/comments/' + commentId)
 }
 
+export const addLikes = (videoId) => {
+    return axiosInstance.put('/videos/' + videoId + '/likes')
+}
+
+export const postVideo = (video) => {
+    return axiosInstance.post('/videos/', video)
+}
+
 const ApiUtils = {
     getVideos,
     getVideoDetails,
     postComment,
-    deleteComment
+    deleteComment,
+    addLikes,
+    postVideo
 }
 
 

@@ -28,8 +28,8 @@ function Comment({ commentData, handleDeleteClick }) {
                     <p className='comment__comment'>{comment}</p>
                 </div>
             </div>
-            <div class="comment__delete">
-                <img class="comment__delete-icon" src={DeleteSVG} onClick={handleClick}
+            <div className="comment__delete">
+                <img className="comment__delete-icon" src={DeleteSVG} onClick={handleClick}
                     alt="click to delete this comment" />
             </div>
             <hr className='comment-list__divider' />

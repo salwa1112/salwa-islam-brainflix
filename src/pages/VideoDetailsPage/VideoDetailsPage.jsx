@@ -38,11 +38,18 @@ function VideoDetailsPage({ videos }) {
     const handleCommentDelete = (commentId) => {
         ApiUtils.deleteComment(id, commentId)
         .then((response) => {
-            console.log(response.data);
             const updatedComments = commentsData.filter(cd => cd.id !== commentId);
             setCommentsData(updatedComments);
         }).catch((error) => {
             //Show error to the user
+        })
+    }
+
+    const handleLikeClick = ()=> {
+        ApiUtils.addLikes(id)
+        .then((response)=> {
+            const video = response.data;
+            setVideoInfo(video);
         })
     }
 
@@ -55,7 +62,7 @@ function VideoDetailsPage({ videos }) {
             <div className='main-video'>
                 <div className='main-video__social'>
                     {!videoInfo && <div><h2>Loading...</h2></div>}
-                    {videoInfo && <MainVideoInfo videoInfo={videoInfo} />}
+                    {videoInfo && <MainVideoInfo videoInfo={videoInfo} onLikeButtonClicked={handleLikeClick} />}
                     {videoInfo && 
                         <CommentList 
                             handleCommentSubmit={handleCommentSubmit}

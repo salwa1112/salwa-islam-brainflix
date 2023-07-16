@@ -6,17 +6,18 @@ import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRef } from 'react';
+import { ApiUtils } from '../../utils';
 
 
-function VideoUploadPage() {
+function VideoUploadPage({onVideoUpload}) {
 
     const navigate = useNavigate();
-    const notify = () => toast("Video Upload Successfully! Returning back to homepage.");
+    const notify = (notificationText) => toast(notificationText);
     const formRef = useRef(null);
 
     const gotoHomePage = () => {
         //display a toast message after chick the publish button
-        notify();
+        notify("Video Upload Successfully! Returning back to homepage.");
         setTimeout(() => {
             navigate('/');
         }, 2000);
@@ -25,8 +26,40 @@ function VideoUploadPage() {
     const handleSubmit = () => {
         // clear the input fields upon submit form
         const form = formRef.current;
-        form.reset();
-        gotoHomePage();
+
+        if(!form.title.value) {
+            notify("Title field must not be empty!");
+            return;
+        }
+
+        if(!form.description.value){
+            notify("Video description field must not be empty!");
+            return;
+        }
+
+
+        const video = {
+            title: form.title.value,
+            channel: 'Brainstation',
+            image: 'http://localhost:5000/images/video-thumbnail.jpg',
+            description: form.description.value,
+            duration: '0:00',
+            video: "http://localhost:5000/videos/Sample-Video.mp4"
+        };
+
+
+        ApiUtils.postVideo(JSON.stringify(video))
+            .then((response) => {
+                form.reset();
+                const uploadedVideo = response.data;
+                //console.log(uploadedVideo);
+                onVideoUpload(uploadedVideo);
+                gotoHomePage();
+            })
+            .catch((error)=> {
+                console.log("error up")
+                notify("Error uploading video!")
+            })
     }
 
     return (
@@ -43,13 +76,13 @@ function VideoUploadPage() {
                     <div className='video-upload__details'>
                         <div className='video-upload__input-wrapper'>
                             <h2 className='video-upload__label'>TITLE YOUR VIDEO</h2>
-                            <input className='video-upload__input video-upload__input--title'
+                            <input name='title' className='video-upload__input video-upload__input--title'
                                 type='text' placeholder='Add a title to your video'></input>
 
                         </div>
                         <div className='video-upload__input-wrapper'>
                             <h2 className='video-upload__label'>ADD A VIDEO DESCRIPTION</h2>
-                            <textarea className='video-upload__input video-upload__input--description'
+                            <textarea name='description' className='video-upload__input video-upload__input--description'
                                 type='text' placeholder='Add a description to your video'>
                             </textarea>
                         </div>

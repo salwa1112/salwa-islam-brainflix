@@ -6,6 +6,7 @@ function VideoList({ videos }) {
     const navigate = useNavigate();
 
     function handleVideoListClick(clickedVideo) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         navigate('/videos/' + clickedVideo.id);
     }
 

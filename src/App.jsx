@@ -25,6 +25,12 @@ function App() {
 
   }, []);
 
+  const addVideoToTheList = ({id, title, channel, image})=> {
+    const newVideoList = [...videos, {id, title, channel, image}];
+    console.log(newVideoList);
+    setVideos(newVideoList);
+  }
+
   //To send info to main video, it needs to be clicked on each video to load the main video
   return (
     <BrowserRouter>
@@ -34,7 +40,7 @@ function App() {
 
         <Routes>
           <Route path='/' element={<HomePage videos={videos} />} />
-          <Route path='/video/upload' element={<VideoUploadPage />} />
+          <Route path='/video/upload' element={<VideoUploadPage onVideoUpload={addVideoToTheList} />} />
           <Route path='/videos/:id' element={<VideoDetailsPage videos={videos} />} />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>

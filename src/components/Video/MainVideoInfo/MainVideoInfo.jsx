@@ -3,7 +3,7 @@ import ViewsIcon from '../../../assets/icons/views.svg';
 import LikeIcon from '../../../assets/icons/likes.svg';
 import { DateTimeUtils } from '../../../utils';
 
-function MainVideoInfo({ videoInfo }) {
+function MainVideoInfo({ videoInfo, onLikeButtonClicked }) {
 
     const { title, channel, timestamp, views, likes, description } = videoInfo;
 
@@ -24,7 +24,7 @@ function MainVideoInfo({ videoInfo }) {
                     </div>
 
                     <div className='player-video__likes'>
-                        <img className='player-video__like-icon' src={LikeIcon} alt="Icon for Likes" />
+                        <img onClick={onLikeButtonClicked} className='player-video__like-icon' src={LikeIcon} alt="Icon for Likes" />
                         <p className='player-video__count'>{likes}</p>
                     </div>
                 </div>
